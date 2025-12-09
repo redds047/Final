@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Experience Homepage</title>
+<style>
+ 
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(183, 0, 0, 0.6); /* reddish overlay */
+    z-index: 1;
+  }
+
+  
+  .hero h1 {
+    position: relative;
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 50px;
+    z-index: 2;
+    letter-spacing: 1px;
+  }
+
+ 
+  .link-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    grid-gap: 25px;
+    text-align: center;
+  }
+
+  
+  .link-container a {
+    display: block;
+    padding: 18px;
+    background: rgba(255,255,255,0.9);
+    color: #b70000;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+  }
+
+  .link-container a:hover {
+    background: #b70000;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+
+ 
+  @media(max-width: 900px){
+    .link-container {
+      grid-template-columns: repeat(2, 200px);
+      grid-gap: 20px;
+    }
+  }
+
+  @media(max-width: 500px){
+    .link-container {
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>911: What's Your Emergency?</h1>
+  <div class="link-container">
+    <a href="apple.html">Need a Doctor</a>
+    <a href="home.html">Pain Symptoms</a>
+    <a href="color.html">Psychological Test</a>
+    <a href="paper.html">Doctors Prescription</a>
+    <a href="painpoints.html">Body Pain</a>
+    <a href="animation.html">Medical Tests</a>
+    <a href="overdose.html">Prescription Overload</a>
+    <a href="insurance.html">No Money</a>
+    <a href="cardiacarrest.html">Cardiac Arrest</a>
+  </div>
+</div>
+
+</body>
+</html>
