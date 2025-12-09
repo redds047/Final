@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: black; /* replace with your background image */
+  background-color: black; 
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -21,13 +21,12 @@ body {
   width: 400px;
   height: 700px;
   margin-top: 20px;
-  background-image: url('body.png'); /* replace with your body image */
+  background-image: url('body.png'); 
   background-size: cover;
   background-position: center;
 }
 
 
-/* Pain points */
 .pain-point {
   position: absolute;
   width: 25px;
@@ -81,4 +80,5 @@ body {
 .right-knee { top: 500px; left: 200px; }
 .left-foot { top: 620px; left: 140px; }
 .right-foot { top: 620px; left: 200px; }
+
 
