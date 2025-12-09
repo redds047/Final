@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black; /* replace with your background image */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-title {
+  margin-top: 20px;
+  font-size: 2rem;
+  text-align: center;
+  color: #ff4444;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 700px;
+  margin-top: 20px;
+  background-image: url('body.png'); /* replace with your body image */
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Pain points */
+.pain-point {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.6);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+
+.pain-point:hover {
+  transform: scale(1.5);
+  background-color: rgba(255, 100, 100, 0.8);
+}
+
+
+.pain-point::after {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ff0000;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.pain-point:hover::after {
+  opacity: 1;
+}
+
+.head { top: 50px; left: 170px; }
+.neck { top: 100px; left: 170px; }
+.left-shoulder { top: 150px; left: 120px; }
+.right-shoulder { top: 150px; left: 220px; }
+.chest { top: 200px; left: 170px; }
+.stomach { top: 280px; left: 170px; }
+.left-arm { top: 220px; left: 80px; }
+.right-arm { top: 220px; left: 260px; }
+.left-hand { top: 350px; left: 70px; }
+.right-hand { top: 350px; left: 260px; }
+.hips { top: 400px; left: 170px; }
+.left-knee { top: 500px; left: 140px; }
+.right-knee { top: 500px; left: 200px; }
+.left-foot { top: 620px; left: 140px; }
+.right-foot { top: 620px; left: 200px; }
+
