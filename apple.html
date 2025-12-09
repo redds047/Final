@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Apple a Day</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff0f0;
+  }
+
+  .container {
+    text-align: center;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .apple {
+    font-size: 15rem; 
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .apple:hover {
+    transform: scale(1.3) rotate(-10deg);
+  }
+
+  
+  .message {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  
+  input[type="checkbox"]:checked + label .apple {
+    animation: bounce 0.6s forwards;
+  }
+
+  input[type="checkbox"]:checked ~ .message {
+    opacity: 1;
+  }
+
+  
+  @keyframes bounce {
+    0% { transform: scale(1) rotate(0deg); }
+    30% { transform: scale(1.4) rotate(-10deg); }
+    60% { transform: scale(1.2) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  .navigation {
+  position: fixed;      /* Fixes it relative to viewport */
+  bottom: 20px;         /* 20px from bottom */
+  left: 20px;           /* 20px from left */
+  display: flex;
+  flex-direction: column; /* stack buttons vertically */
+  gap: 10px;             /* space between buttons */
+  z-index: 10;           /* make sure it's above other content */
+}
+
+
+.nav-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #b70000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #ff4d4d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+
+}
+</style>
+</head>
+<body>
+<div class="navigation">
+  <a href="1.html" class="nav-button">← Back</a>
+  <a href="paper.html" class="nav-button">Next →</a>
+</div>
+
+<div class="container">
+
+  <h1>An Apple a Day Keeps the Doctor Away!</h1>
+
+ 
+  <input type="checkbox" id="appleCheck">
+  <label for="appleCheck">
+    <span class="apple">🍎</span>
+  </label>
+
+  <div class="message">You’re healthy! The doctor stays away! 🍏</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insurance Money Simulation</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    overflow: hidden;
+  }
+
+  .container {
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .alert {
+    color: red;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  .money-display {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+
+  .plans {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+
+  /* Hide radio buttons */
+  input[type="radio"] {
+    display: none;
+  }
+
+  label.plan {
+    display: block;
+    cursor: pointer;
+    width: 150px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+  }
+
+  label.plan:hover {
+    transform: scale(1.1);
+    border-color: #ff3333;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  label.plan h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+  }
+
+  label.plan p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  /* Show restored money based on plan selection */
+  #basic:checked ~ .money-display::after {
+    content: " +$30 restored";
+    color: green;
+    animation: floatMoney 1.2s ease forwards;
+  }
+
+  #standard:checked ~ .money-display::after {
+    content: " +$60 restored";
+    color: green;
+    animation: floatMoney 1.2s ease forwards;
+  }
+
+  #premium:checked ~ .money-display::after {
+    content: " +$100 restored";
+    color: green;
+    animation: floatMoney 1.2s ease forwards;
+  }
+
+  @keyframes floatMoney {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { transform: translateY(-30px); opacity: 1; }
+    100% { transform: translateY(-60px); opacity: 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Medical Insurance Money Simulation</h1>
+
+  <div class="alert">🚨 You just got robbed $100! 🚨</div>
+
+  <div class="money-display">Your Money: $100</div>
+
+  <p>Select your insurance plan to recover your money:</p>
+
+  <div class="plans">
+    <input type="radio" id="basic" name="plan">
+    <label for="basic" class="plan">
+      <h2>Basic</h2>
+      <p>Restores $30</p>
+    </label>
+
+    <input type="radio" id="standard" name="plan">
+    <label for="standard" class="plan">
+      <h2>Standard</h2>
+      <p>Restores $60</p>
+    </label>
+
+    <input type="radio" id="premium" name="plan">
+    <label for="premium" class="plan">
+      <h2>Premium</h2>
+      <p>Restores $100</p>
+    </label>
+  </div>
+
+</div>
+
+</body>
+</html>

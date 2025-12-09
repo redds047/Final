@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Experiences Checklist</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ebe6e6;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .checklist-container {
+    background: #fff;
+    width: 500px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .checklist-container h1 {
+    text-align: center;
+    color: #b70000;
+    margin-bottom: 30px;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  /* Checkbox square */
+  .checklist input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  /* Hover effect for text */
+  .checklist li:hover label {
+    color: #b70000;
+  }
+
+  /* Optional small icon on right */
+  .checklist li span.icon {
+    margin-left: auto;
+    color: #b70000;
+    opacity: 0.3;
+    font-size: 18px;
+    transition: opacity 0.2s;
+  }
+
+  .checklist li:hover span.icon {
+    opacity: 1;
+  }
+
+  /* Footer / timestamp */
+  .footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+  }
+
+
+
+</style>
+</head>
+<body>
+
+<div class="checklist-container">
+  <h1>Patient Experience Checklist</h1>
+  <ul class="checklist">
+    <li>
+      <input type="checkbox" id="exp1">
+      <label for="exp1">Rapid Heartbeat</label>
+      <span class="icon">🩺</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp2">
+      <label for="exp2">Pain Sensitivity</label>
+      <span class="icon">💊</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp3">
+      <label for="exp3">Breathing Difficulty</label>
+      <span class="icon">🌬️</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp4">
+      <label for="exp4">Medication Review</label>
+      <span class="icon">📝</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp5">
+      <label for="exp5">Visual Distortion</label>
+      <span class="icon">👁️</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp6">
+      <label for="exp6">Tactile Discomfort</label>
+      <span class="icon">✋</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp7">
+      <label for="exp7">Prescription Overload</label>
+      <span class="icon">📦</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp8">
+      <label for="exp8">Testing & Diagnostics</label>
+      <span class="icon">🧪</span>
+    </li>
+    <li>
+      <input type="checkbox" id="exp9">
+      <label for="exp9">Discharge Summary</label>
+      <span class="icon">📄</span>
+    </li>
+  </ul>
+
+  <div class="footer">Checklist updated: 09/12/2025</div>
+</div>
+
+</body>
+</html>

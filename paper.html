@@ -1,0 +1,219 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annotated Medical Prescription</title>
+<style>
+  body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    position: relative;
+  }
+
+  .prescription {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 600px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .info {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .prescription-details {
+    margin-bottom: 30px;
+  }
+
+  .prescription-details ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .prescription-details li {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  /* LONG ARROWS */
+  .note {
+    position: absolute;
+    left: -350px;     /* pushes notes FAR left outside the box */
+    width: 300px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    color: #aa0000;
+  }
+
+  .note::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;                      /* start arrow at edge of text */
+    width: 330px;                      /* arrow length */
+    height: 2px;
+    background: red;                   /* arrow line */
+  }
+
+  .note::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 5px);
+    right: -15px;                      /* arrow head position */
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid red;       /* arrow head */
+  }
+  animated-line {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  height: 2px;
+  background: red;
+  animation: drawLine 5s ease-out forwards;
+  width: 0; /* starts invisible */
+}
+
+/* ANIMATED ARROW HEAD */
+.animated-head {
+  position: absolute;
+  top: calc(50% - 5px);
+  right: -15px;
+  opacity: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid red;
+  animation: revealHead 3s ease-out forwards;
+  animation-delay: 4.7s; /* head shows after line draws */
+}
+
+/* KEYFRAMES */
+@keyframes drawLine {
+  0% { width: 0; }
+  100% { width: 330px; } /* final arrow length */
+}
+
+@keyframes revealHead {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* NOTE BOX */
+.note {
+  position: absolute;
+  left: -350px;
+  width: 300px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+  color: #aa0000;
+}
+
+ .navigation {
+  position: fixed;      /* Fixes it relative to viewport */
+  bottom: 20px;         /* 20px from bottom */
+  left: 20px;           /* 20px from left */
+  display: flex;
+  flex-direction: column; /* stack buttons vertically */
+  gap: 10px;             /* space between buttons */
+  z-index: 10;           /* make sure it's above other content */
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #b70000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #ff4d4d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+
+}
+</style>
+</head>
+<body>
+
+<div class="navigation">
+  <a href="apple.html" class="nav-button">← Back</a>
+  <a href="color.html" class="nav-button">Next →</a>
+</div>
+
+<div class="prescription">
+  <div class="header">
+    <h1>Dr. John Smith, M.D.</h1>
+    <p>City Hospital</p>
+    <p>123 Health St., Wellness City</p>
+    <p>Phone: (123) 456-7890</p>
+  </div>
+
+  <div class="info">
+    <div><strong>Patient Name:</strong> Jane Doe</div>
+    <div><strong>Age:</strong> 28</div>
+    <div><strong>Gender:</strong> Female</div>
+    <div><strong>Date:</strong> 09/12/2025</div>
+  </div>
+
+  <div class="prescription-details">
+    <h3>Prescription</h3>
+    <ul>
+      <li>
+  Amoxicillin 500mg – Take 1 capsule three times a day for 7 days
+
+  <div class="note" style="top:-5px;">
+    Antibiotic — complete full course
+
+    <!-- animated arrow -->
+    <div class="animated-line"></div>
+    <div class="animated-head"></div>
+  </div>
+</li>
+       
+
+      <li id="rx2">
+        Paracetamol 500mg – Take 1 tablet every 6 hours as needed for pain
+        <div class="note" style="top: 0;">Pain + fever control — max 4g per day</div>
+      </li>
+
+      <li id="rx3">
+        Vitamin D 1000 IU – Take 1 capsule daily for 1 month
+        <div class="note" style="top: 0;">Corrects deficiency — boosts bone + immune health</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="stamp">
+      <p>Hospital Stamp</p>
+      <div style="border:1px solid #000; width:100px; height:50px;"></div>
+    </div>
+    <div class="signature">
+      <p>Dr. John Smith</p>
+      <p>Signature</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
