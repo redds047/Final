@@ -32,7 +32,7 @@
     height: 100vh;
   }
 
-  /* Heart line wave */
+  
   .wave {
     position: absolute;
     width: 200%;
@@ -43,7 +43,7 @@
     animation: moveWave linear infinite;
   }
 
-  /* Multiple heart lines using repeating linear gradient */
+  
   .wave::before {
     content: "";
     display: block;
@@ -60,13 +60,13 @@
     );
   }
 
-  /* Animate the wave moving left to right */
+ 
   @keyframes moveWave {
     0% { transform: translateX(0); }
     100% { transform: translateX(50%); }
   }
 
-  /* Generate multiple waves at different vertical positions and speeds */
+ 
   .wave:nth-child(1) { top: 5%; animation-duration: 2s; }
   .wave:nth-child(2) { top: 15%; animation-duration: 2.5s; }
   .wave:nth-child(3) { top: 25%; animation-duration: 3s; }
@@ -112,3 +112,4 @@
 
 </body>
 </html>
+
