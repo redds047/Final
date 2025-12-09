@@ -79,7 +79,7 @@ h1 {
 .pill9  { left: 85%;  animation-delay: 2.2s;  animation-duration: 5.2s; }
 .pill10 { left: 95%;  animation-delay: 0.8s;  animation-duration: 7.2s; }
 
-/* New pills (11–30) */
+
 .pill11 { left: 10%;  animation-delay: 0.7s;  animation-duration: 6.3s; }
 .pill12 { left: 20%;  animation-delay: 1.7s;  animation-duration: 7.1s; }
 .pill13 { left: 30%;  animation-delay: 2.7s;  animation-duration: 5.3s; }
@@ -100,3 +100,4 @@ h1 {
 .pill28 { left: 77%;  animation-delay: 1.1s;  animation-duration: 6.6s; }
 .pill29 { left: 87%;  animation-delay: 2.1s;  animation-duration: 5.1s; }
 .pill30 { left: 97%;  animation-delay: 0.9s;  animation-duration: 7.6s; }
+
